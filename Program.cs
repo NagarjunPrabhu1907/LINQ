@@ -67,12 +67,19 @@ class Program
             "report1.pdf" , "report2.pdf", "data.pdf" ,"letter2.pdf","maths.txt","Social.txt","read.doc","earth.doc"
 
         };
-        List<string> docfiles = new List<string>();  
-        foreach (var file  in files)
-        {
-            if (file.EndsWith(".doc")) 
-                docfiles.Add(file);
-        }
+
+        //using normal method
+        //List<string> docfiles = new List<string>();  
+        //foreach (var file  in files)
+        //{
+        //    if (file.EndsWith(".doc")) 
+        //        docfiles.Add(file);
+        //}
+
+        //using linq 
+        var docfiles = from f in files
+                       where f.EndsWith(".doc")
+                       select f; 
         Console.WriteLine("doc files are");
         foreach (var docfile in docfiles) 
         {
