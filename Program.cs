@@ -103,10 +103,12 @@ class Program
         var youngCustomers = from c in customers
                              where c.age <25
                              select c;
-        foreach (var yc in youngCustomers)
-        {
-            Console.WriteLine(yc.Display());
-        }
+        //foreach (var yc in youngCustomers)
+        //{
+        //    Console.WriteLine(yc.Display());
+        //}
+
+        youngCustomers.ToList().ForEach(x => Console.WriteLine(x.Display()));
 
 
     }
