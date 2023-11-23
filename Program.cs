@@ -73,7 +73,7 @@ class Program
             if (file.EndsWith(".doc")) 
                 docfiles.Add(file);
         }
-
+        Console.WriteLine("doc files are");
         foreach (var docfile in docfiles) 
         {
             Console.WriteLine(docfile);
