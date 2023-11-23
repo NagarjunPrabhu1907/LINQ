@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
 class Program
 {
@@ -17,6 +18,7 @@ class Program
         {
             Console.WriteLine(evenNumber);
         }
+
 
 
 
@@ -56,9 +58,26 @@ class Program
         Console.WriteLine("\n\nTotal number of words in the paragraph: " + wordCount);
 
 
+
         Func<int, int> square = x => x * x;
         Console.WriteLine(square(5));
 
+        List <string > files = new List<string>()
+        {
+            "report1.pdf" , "report2.pdf", "data.pdf" ,"letter2.pdf","maths.txt","Social.txt","read.doc","earth.doc"
+
+        };
+        List<string> docfiles = new List<string>();  
+        foreach (var file  in files)
+        {
+            if (file.EndsWith(".doc")) 
+                docfiles.Add(file);
+        }
+
+        foreach (var docfile in docfiles) 
+        {
+            Console.WriteLine(docfile);
+        }
 
 
     }
