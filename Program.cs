@@ -18,7 +18,7 @@ class Program
         {
             Console.WriteLine(evenNumber);
         }
-
+        //end
 
 
 
@@ -56,7 +56,7 @@ class Program
         }
 
         Console.WriteLine("\n\nTotal number of words in the paragraph: " + wordCount);
-
+       //end
 
 
         Func<int, int> square = x => x * x;
@@ -67,6 +67,7 @@ class Program
             "report1.pdf" , "report2.pdf", "data.pdf" ,"letter2.pdf","maths.txt","Social.txt","read.doc","earth.doc"
 
         };
+         
 
         //using normal method
         //List<string> docfiles = new List<string>();  
@@ -85,9 +86,43 @@ class Program
         {
             Console.WriteLine(docfile);
         }
+        //end
+
+
+
+
+        List<Customer> customers = new List<Customer>
+        {
+            new Customer{FirstName = "arun", LastName = "kumar" , age = 22},
+            new Customer{FirstName = "varun", LastName = "singh" , age = 23},
+            new Customer{FirstName = "ram", LastName = "kumar" , age = 20},
+            new Customer{FirstName = "raj", LastName = "kanth" , age =32 },
+            new Customer{FirstName = "viru", LastName = "nand" , age =24 },
+            new Customer{FirstName = "anand", LastName = "chawla" , age =34 }
+        };
+        var youngCustomers = from c in customers
+                             where c.age <25
+                             select c;
+        foreach (var yc in youngCustomers)
+        {
+            Console.WriteLine(yc.Display());
+        }
 
 
     }
+    public class Customer
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public int age { get; set; }
+
+        public string Display()
+        {
+            return String.Format("{0},{1},{2}",FirstName,LastName,age);
+        }
+    }
+
 }
 
 
