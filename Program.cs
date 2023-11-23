@@ -55,6 +55,12 @@ class Program
 
         Console.WriteLine("\n\nTotal number of words in the paragraph: " + wordCount);
 
+
+        Func<int, int> square = x => x * x;
+        Console.WriteLine(square(5));
+
+
+
     }
 }
 
